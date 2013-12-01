@@ -17,7 +17,7 @@ bssh(){
 		if [[ -n $ssh_host ]] ; then
 			while true ; 
 			do 
-				ssh $ssh_host -t "sn=${screen_name} ; screen -rx ||{ screen -Rd \${sn} ;}" && {
+				ssh $ssh_host -t " sn1="$(screen -ls | grep Detached | awk '{print $1}' | head -n1 )" ; sn2=${screen_name} ; screen -RD \$sn1 ||{ screen -Rd \${sn2} ;}" && {
 					echo "ssh'd to $ssh_host" ; break
 				}||{ 
 					echo "SSH no worky to $ssh_host, sleeping"
