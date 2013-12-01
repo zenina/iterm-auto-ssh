@@ -41,15 +41,13 @@ Auto-ssh run on login, or Iterm session start:
   
   
 bashrc.snippet (if enabled/uncommented, this is how it should appear)
-  
+{code} 
 ##### Iterm Auto SSH on Login #####
 # Uncomment to run auto-ssh on login #
 
-
-
 if [[ $TERM_PROGRAM == "iTerm.app" ]]; then
-
        . ~/iterm-auto-ssh.sh
        
 fi
+{code}
 
