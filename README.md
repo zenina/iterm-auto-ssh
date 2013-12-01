@@ -3,15 +3,16 @@ iterm-auto-ssh
 
 Iterm Auto SSH script, with .bashrc integration. Forces ssh to hosts based on iterm window/tab/pane
 
-Includes:
+Contents of Repo:
 - iterm-auto-ssh.sh : iterm-auto-ssh script, can be run standalone (with .bashrc snippet), or enabled on login/session.
 - auto-ssh.conf : key-value pairs for hosts and window/tab/pane ID assignments, and 'active' array (see comments in config)
 - bashrc.snippet  : bashrc settings for bssh function, used by auto-ssh script, and auto-ssh on login/new session. 
-    - bssh (function) : ssh funciton loops over hostname until connecting, and creates screen with name given. 
-     This can be used standalone on the commandline, or within other scripts.
-     Syntax:
-        bssh <host> [screen]
-    - Note: uncomment the iterm-auto-ssh section at the bottom to enable on login. 
+    - bssh (function) : ssh funciton loops over hostname until connecting, and creates screen with name given. This can be used standalone on the commandline, or within other scripts.
+        - Syntax:
+
+                bssh [host] [screen]
+
+    - Auto-ssh on login: at the bottom of the bashrc.snippet, there is a block of bash to run auto-ssh (if terminal is iterm) on login. By default it's commented/disabled. uncomment the iterm-auto-ssh section at the bottom to enable on login. (see bottom section of readme)
 
 Installation:
 - Place directory in homedir, or desired location. 
@@ -24,23 +25,24 @@ Installation:
       NOTE: If you uncomment this/set for login, it will only run within iterm, as it does a terminal app variable check
 - Verify $config variable path in iterm-auto-ssh.sh (Default: ~/iterm-auto-ssh/auto-ssh.conf )
     - if you're using another location, modify this variables path to reflect such. 
-
-
-Log out of your sessions, and back in.
+- Log out of your sessions, and back in.
 
 Running:
 - Run manually from command line:
-      ~/iterm-auto-ssh/iterm-auto-ssh.sh
+
+        ~/iterm-auto-ssh/iterm-auto-ssh.sh
+
 - Running bssh ssh wrapper function from command line:
-      bssh <host> <screen title>
+
+        bssh [host] [screen title]
 
 
 Auto-ssh run on login, or Iterm session start:
-  Auto-ssh is disabled by default in the bashrc snippet.
-  Uncomment the following lines from your bashrc.snippet to force auto-ssh to run on session start/login:
+- Auto-ssh is disabled by default in the bashrc snippet.
+- Uncomment the following lines from your bashrc.snippet to force auto-ssh to run on session start/login:
   
   
-bashrc.snippet (if enabled/uncommented, this is how it should appear)
+<i>bashrc.snippet (if enabled/uncommented, this is how it should appear)</i>
 
     ##### Iterm Auto SSH on Login #####
     # Uncomment to run auto-ssh on login #
