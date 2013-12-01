@@ -7,11 +7,11 @@ Includes:
 - iterm-auto-ssh.sh : iterm-auto-ssh script, can be run standalone (with .bashrc snippet), or enabled on login/session.
 - auto-ssh.conf : key-value pairs for hosts and window/tab/pane ID assignments, and 'active' array (see comments in config)
 - bashrc.snippet  : bashrc settings for bssh function, used by auto-ssh script, and auto-ssh on login/new session. 
-    -bssh (function) : ssh funciton loops over hostname until connecting, and creates screen with name given. 
+    - bssh (function) : ssh funciton loops over hostname until connecting, and creates screen with name given. 
      This can be used standalone on the commandline, or within other scripts.
      Syntax:
         bssh <host> [screen]
-    -Note: uncomment the iterm-auto-ssh section at the bottom to enable on login. 
+    - Note: uncomment the iterm-auto-ssh section at the bottom to enable on login. 
 
 Installation:
 - Place directory in homedir, or desired location. 
@@ -29,9 +29,9 @@ Installation:
 Log out of your sessions, and back in.
 
 Running:
-  Run manually from command line:
+- Run manually from command line:
       ~/iterm-auto-ssh/iterm-auto-ssh.sh
-  Running bssh ssh wrapper function from command line:
+- Running bssh ssh wrapper function from command line:
       bssh <host> <screen title>
 
 
@@ -41,13 +41,12 @@ Auto-ssh run on login, or Iterm session start:
   
   
 bashrc.snippet (if enabled/uncommented, this is how it should appear)
-{code} 
-##### Iterm Auto SSH on Login #####
-# Uncomment to run auto-ssh on login #
 
-if [[ $TERM_PROGRAM == "iTerm.app" ]]; then
-       . ~/iterm-auto-ssh.sh
-       
-fi
-{code}
+    ##### Iterm Auto SSH on Login #####
+    # Uncomment to run auto-ssh on login #
+
+    if [[ $TERM_PROGRAM == "iTerm.app" ]]; then
+        . ~/iterm-auto-ssh.sh
+    fi
+
 
