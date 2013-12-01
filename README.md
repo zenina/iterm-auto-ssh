@@ -45,7 +45,11 @@ bashrc.snippet (if enabled/uncommented, this is how it should appear)
 ##### Iterm Auto SSH on Login #####
 # Uncomment to run auto-ssh on login #
 
+
+
 if [[ $TERM_PROGRAM == "iTerm.app" ]]; then
+
        . ~/iterm-auto-ssh.sh
+       
 fi
 
